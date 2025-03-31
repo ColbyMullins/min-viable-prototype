@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://o5d6orguuvn" path="res://spawner.tscn" id="3_nbmal"]
 [ext_resource type="PackedScene" uid="uid://di5jyc81ceso4" path="res://pizza.tscn" id="4_yrpnb"]
 [ext_resource type="Script" path="res://scripts/manager.gd" id="6_4u0ux"]
-[ext_resource type="Texture2D" uid="uid://brvbvlbsijipy" path="res://pics/onion.webp" id="7_iungy"]
 [ext_resource type="Texture2D" uid="uid://buhxej8u4teow" path="res://pics/mushrooms.svg" id="7_lrvdi"]
 [ext_resource type="PackedScene" uid="uid://cjem4nw6wo47q" path="res://TimerUI.tscn" id="8_j43xp"]
+[ext_resource type="Texture2D" uid="uid://p8bb0je25wq6" path="res://pics/AAAAAAAAAAAA.webp" id="10_5yy42"]
 [ext_resource type="AudioStream" uid="uid://divek64fh4sxn" path="res://audio/winsound.wav" id="11_16igx"]
 [ext_resource type="Script" path="res://audio_stream_player_2d.gd" id="12_3iw2r"]
 [ext_resource type="AudioStream" uid="uid://c72h8w0mbv28f" path="res://audio/losesound.wav" id="13_3sriv"]
@@ -109,7 +109,7 @@ scale = Vector2(0.196562, 0.196562)
 texture = ExtResource("3_fxllr")
 drop_area = NodePath("../Pizza")
 topping_type = "onion"
-topping_texture = ExtResource("7_iungy")
+topping_texture = ExtResource("10_5yy42")
 
 [node name="Pizza" parent="." instance=ExtResource("4_yrpnb")]
 position = Vector2(586, 266)
@@ -147,7 +147,7 @@ texture = ExtResource("7_lrvdi")
 [node name="OnionSprite" type="Sprite2D" parent="."]
 position = Vector2(1038, 175.25)
 scale = Vector2(0.0848437, 0.0848437)
-texture = ExtResource("7_iungy")
+texture = ExtResource("10_5yy42")
 
 [node name="WinTimer" type="Timer" parent="."]
 wait_time = 3.0

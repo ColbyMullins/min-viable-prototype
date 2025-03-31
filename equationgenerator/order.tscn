@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://order.gd" id="1_a02kb"]
 [ext_resource type="Texture2D" uid="uid://plhjy0oo3yje" path="res://pics/pepperoni.svg" id="1_j0gn2"]
 [ext_resource type="Texture2D" uid="uid://buhxej8u4teow" path="res://pics/mushrooms.svg" id="2_prltx"]
-[ext_resource type="Texture2D" uid="uid://brvbvlbsijipy" path="res://pics/onion.webp" id="3_scmxs"]
+[ext_resource type="Texture2D" uid="uid://p8bb0je25wq6" path="res://pics/AAAAAAAAAAAA.webp" id="4_wshef"]
 
 [node name="Order" type="Control"]
 layout_mode = 3
@@ -34,6 +34,7 @@ layout_mode = 2
 
 [node name="PepperoniContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 1.4
 
 [node name="PepperoniLabel" type="Label" parent="MarginContainer/VBoxContainer/PepperoniContainer"]
 layout_mode = 2
@@ -68,13 +69,19 @@ text = "Onion"
 
 [node name="OnionSprite" type="TextureRect" parent="MarginContainer/VBoxContainer/OnionContainer"]
 layout_mode = 2
-texture = ExtResource("3_scmxs")
+texture = ExtResource("4_wshef")
 expand_mode = 2
 
 [node name="TimeRemainingLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "60s"
+
+[node name="TimeRemainingBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 6
+value = 40.0
 
 [node name="OrderButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

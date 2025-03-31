@@ -29,8 +29,10 @@ func _ready() -> void:
 	order.mushroom_container.hide()
 	order.onion_container.hide()
 	order.time_remaining_label.hide()
+	order.time_remaining_bar.hide()
 	order.pizzaButton.hide()
 	timer.wait_time = randi_range(60, 90)
+	order.totalTime = timer.wait_time
 	timer.start()
 	animation_timer.start()
 	order.set_position(Vector2(550, 300), false)
@@ -118,7 +120,8 @@ func showOrder() -> void:
 	order.pepperoni_container.show()
 	order.mushroom_container.show()
 	order.onion_container.show()
-	order.time_remaining_label.show()
+	#order.time_remaining_label.show()
+	order.time_remaining_bar.show()
 	order.pizzaButton.show()
 
 func _on_animation_timer_timeout() -> void:
@@ -127,18 +130,21 @@ func _on_animation_timer_timeout() -> void:
 		order.mushroom_container.hide()
 		order.onion_container.hide()
 		order.time_remaining_label.hide()
+		order.time_remaining_bar.hide()
 		order.pizzaButton.hide()
 	elif (animationNum == 1):
 		order.pepperoni_container.hide()
 		order.mushroom_container.show()
 		order.onion_container.hide()
 		order.time_remaining_label.hide()
+		order.time_remaining_bar.hide()
 		order.pizzaButton.hide()
 	elif (animationNum == 2):
 		order.pepperoni_container.hide()
 		order.mushroom_container.hide()
 		order.onion_container.show()
 		order.time_remaining_label.hide()
+		order.time_remaining_bar.hide()
 		order.pizzaButton.hide()
 	else:
 		order.hide()

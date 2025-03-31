@@ -14,10 +14,14 @@ extends Control
 @onready var mushroom_container: HBoxContainer = $MarginContainer/VBoxContainer/MushroomContainer
 @onready var onion_container: HBoxContainer = $MarginContainer/VBoxContainer/OnionContainer
 @onready var pizzaButton: Button = $MarginContainer/VBoxContainer/OrderButton
+@onready var order_button: Button = $MarginContainer/VBoxContainer/OrderButton
+@onready var time_remaining_bar: ProgressBar = $MarginContainer/VBoxContainer/TimeRemainingBar
 
 var pepNum
 var mushNum
 var onionNum
+var totalTime
+var currentTime
 @onready var order_rack: HBoxContainer = get_node("/root/Main/OrderScene/Control/OrderRack")
 @onready var manager: Node = get_node("/root/Main/Node2D/Manager")
 
@@ -30,13 +34,12 @@ func _ready() -> void:
 	mushroom_label.text = mushLabel
 	onion_label.text = onionLabel
 	orderSignal.connect(manager.managerSetEquations)
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
+	currentTime = float(time_remaining_label.text.split("s")[0])
+	time_remaining_bar.value = currentTime / totalTime * 100
 
 func _on_order_button_pressed() -> void:
 	orderSignal.emit(pepLabel, mushLabel, onionLabel)

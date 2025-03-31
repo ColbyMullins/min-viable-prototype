@@ -30,6 +30,8 @@ func _on_customer_button_pressed() -> void:
 	customer_container.add_child(new_customer)
 	#order_rack.add_child(new_customer.order)
 	customer_button.disabled = true
+	for child in order_rack.get_children():
+		child.order_button.disabled = true
 	
 func handleCustomerTimeout(customer: Node2D) -> void:
 	order_rack.remove_child(customer.order)
@@ -51,6 +53,8 @@ func handleAnimationOver(customer: Node2D) -> void:
 	customer.showOrder()
 	customer.timer.start()
 	customer_button.disabled = false
+	for child in order_rack.get_children():
+		child.order_button.disabled = false
 
 func _on_node_2d_pizza_mode() -> void:
 	hide()
