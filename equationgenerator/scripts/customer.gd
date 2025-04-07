@@ -35,7 +35,7 @@ func _ready() -> void:
 	order.totalTime = timer.wait_time
 	timer.start()
 	animation_timer.start()
-	order.set_position(Vector2(550, 300), false)
+	order.set_position(Vector2(550, 270), false)
 
 func _process(delta: float) -> void:
 	if (order != null):

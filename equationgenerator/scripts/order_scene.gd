@@ -34,7 +34,8 @@ func _on_customer_button_pressed() -> void:
 		child.order_button.disabled = true
 	
 func handleCustomerTimeout(customer: Node2D) -> void:
-	order_rack.remove_child(customer.order)
+	if (customer.order != null):
+		order_rack.remove_child(customer.order)
 	customer.queue_free()
 	#show()
 	#forceClosePizza.emit()

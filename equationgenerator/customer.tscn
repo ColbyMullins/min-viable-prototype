@@ -1,15 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://w5vjdipkcmlb"]
+[gd_scene load_steps=5 format=3 uid="uid://w5vjdipkcmlb"]
 
 [ext_resource type="Script" path="res://scripts/customer.gd" id="1_fc8pt"]
+[ext_resource type="Texture2D" uid="uid://bo86qpgtd1mju" path="res://pics/woman.png" id="2_bn6kp"]
 [ext_resource type="Texture2D" uid="uid://iwfwadbvwh4v" path="res://pics/free-speech-bubble-icon-1078-thumb.png" id="3_ndww4"]
-[ext_resource type="Texture2D" uid="uid://b8q3u4l2tq2dn" path="res://pics/PandaFree/PandaWave.png" id="3_w7vqc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d7k52"]
 font_size = 24
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_88igm"]
-atlas = ExtResource("3_w7vqc")
-region = Rect2(64, 0, 64, 64)
 
 [node name="Customer" type="Node2D"]
 script = ExtResource("1_fc8pt")
@@ -28,15 +24,15 @@ text = "60s"
 label_settings = SubResource("LabelSettings_d7k52")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(458, 465)
-scale = Vector2(1.73438, 1.73438)
-texture = SubResource("AtlasTexture_88igm")
+position = Vector2(444, 433)
+scale = Vector2(0.186116, 0.186116)
+texture = ExtResource("2_bn6kp")
 
 [node name="AnimationTimer" type="Timer" parent="."]
 wait_time = 3.0
 
 [node name="SpeechBubble" type="Sprite2D" parent="."]
-position = Vector2(559, 356)
+position = Vector2(559, 328)
 scale = Vector2(0.401855, 0.270996)
 texture = ExtResource("3_ndww4")
 

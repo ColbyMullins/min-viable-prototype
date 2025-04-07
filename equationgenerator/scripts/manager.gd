@@ -12,6 +12,9 @@ var pizza_init_pos: Vector2 = Vector2(0,0);
 var score: int = 0
 @onready var score_label: Label = $"../ScoreLabel"
 @onready var timer_ui: Control = $"../TimerUI"
+@onready var pep_num_label: Label = $"../PepNumLabel"
+@onready var mush_num_label: Label = $"../MushNumLabel"
+@onready var onion_num_label: Label = $"../OnionNumLabel"
 
 func _ready() -> void:
 	pizza_init_pos = pizza.global_position
@@ -38,7 +41,13 @@ func _on_pizza_topping_placed(topping: Sprite2D) -> void:
 	toppings_objects[topping.topping_type].append(topping)
 	toppings[topping.topping_type] += 1
 	line_edit.text = str(toppings[topping.topping_type])
+	updateToppingNumLabels()
 	#print(toppings_objects)
+
+func updateToppingNumLabels() -> void:
+	pep_num_label.text = str(toppings["pepperoni"])
+	mush_num_label.text = str(toppings["mushroom"])
+	onion_num_label.text = str(toppings["onion"])
 
 func clear_all() -> void:
 	#print("cleared all")
@@ -48,6 +57,7 @@ func clear_all() -> void:
 		child.queue_free()
 	line_edit.text = "0"
 	toppings = {"pepperoni": 0, "mushroom": 0, "onion": 0}
+	updateToppingNumLabels()
 
 func _on_pizza_topping_left(topping: Sprite2D) -> void:
 	toppings[topping.topping_type] -= 1
@@ -56,6 +66,7 @@ func _on_pizza_topping_left(topping: Sprite2D) -> void:
 	if int(line_edit.text) < 0:
 		line_edit.text = "0"
 		toppings = {"pepperoni": 0, "mushroom": 0, "onion": 0}
+	updateToppingNumLabels()
 	#print(toppings_objects)
 
 

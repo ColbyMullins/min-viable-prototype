@@ -185,6 +185,37 @@ offset_right = 637.0
 offset_bottom = 602.0
 text = "Back/Give up"
 
+[node name="TipLabel" type="Label" parent="."]
+offset_left = 970.0
+offset_top = 17.0
+offset_right = 1095.0
+offset_bottom = 40.0
+text = "Solve all at once"
+
+[node name="PepNumLabel" type="Label" parent="."]
+offset_left = 1117.0
+offset_top = 56.0
+offset_right = 1157.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="MushNumLabel" type="Label" parent="."]
+offset_left = 1120.0
+offset_top = 110.0
+offset_right = 1204.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="OnionNumLabel" type="Label" parent="."]
+offset_left = 1121.0
+offset_top = 153.0
+offset_right = 1197.0
+offset_bottom = 187.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+
 [connection signal="solved" from="." to="." method="_on_button_pressed"]
 [connection signal="solved" from="." to="Manager" method="clear_all"]
 [connection signal="winSound" from="." to="Sounds/WinSoundPlayer" method="_on_node_2d_win_sound"]
